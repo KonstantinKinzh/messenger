@@ -2,14 +2,14 @@
 import { makeAutoObservable } from "mobx";
 
 // Interfaces
-import { IDataError } from "../interfaces/interface";
+import { TDataError } from "../types/types"
 
 // Mobx-store
 class DataErrorStore {
 
     isOpenWInErr = false;
 
-    dataError: IDataError = {
+    dataError: TDataError = {
         titleErr: "",
         messageErr: ""
     };
@@ -18,7 +18,7 @@ class DataErrorStore {
         makeAutoObservable(this);
     };
 
-    setDataError = (data: IDataError) => {
+    setDataError = (data: TDataError) => {
         this.dataError = data;
         this.isOpenWInErr = true;
     };
@@ -33,6 +33,7 @@ class DataErrorStore {
 };
 
 // Instances
-const dataErrPass = new DataErrorStore();
+const dataErrRegister = new DataErrorStore();
+const dataErrAuth = new DataErrorStore();
 
-export { dataErrPass };
+export { dataErrRegister, dataErrAuth };

@@ -1,6 +1,14 @@
 // React
 import { FormChat } from "@/components/form";
 
+import { observer } from "mobx-react";
+
+// Components
+import { WindowError } from "@/components/windowError";
+
+// Store
+import { dataErrAuth } from "@/shared/error/store/dataErrorStore";
+
 // Consts
 import { inputs } from "./consts/inputs";
 
@@ -10,7 +18,8 @@ import { toAuth } from "./utils/toAuth";
 // Styles
 import "./Auth.css";
 
-export function Auth() {
+export const Auth = observer(() => {
+    const isOpen = dataErrAuth.isOpenWInErr;
     return (
         <div className="auth">
             <FormChat
@@ -19,6 +28,7 @@ export function Auth() {
                 onSubmit={toAuth}
                 nameBtn="Авторизоваться"
             />
+            {isOpen && <WindowError instanceStore={dataErrAuth} />}
         </div>
     );
-};
+});

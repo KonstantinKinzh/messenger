@@ -16,51 +16,53 @@ export const FormChat = (props: IDynamicFormProps) => {
     const navigate = useNavigate();
 
     return (
-        <form
-            className="form"
-            onSubmit={(e) => {
-                onSubmit(states, navigate);
-                e.preventDefault()
-            }}>
-            <div className="form__inner">
+            <form
+                className="form"
+                onSubmit={(e) => {
+                    onSubmit(states, navigate);
+                    e.preventDefault();
+                }}>
 
-                <h2 className="form__header">{header}</h2>
+                <div className="form__inner">
 
-                {inputs.map((input, index) => (
-                    <input
-                        id={`${index}`}
-                        key={input.name}
-                        type={input.type}
-                        placeholder={input.placeholder}
-                        value={defineState(input.nameState)}
-                        onChange={(e) => getInputValue(e, input.nameState)}
-                        className="form__input"
-                    />
-                ))}
+                    <h2 className="form__header">{header}</h2>
 
-                <button
-                    type="submit"
-                    className="form__btn">
-                    {nameBtn}
-                </button>
+                    {inputs.map((input, index) => (
+                        <input
+                            id={`${index}`}
+                            key={input.name}
+                            type={input.type}
+                            placeholder={input.placeholder}
+                            value={defineState(input.nameState)}
+                            onChange={(e) => getInputValue(e, input.nameState)}
+                            className="form__input"
+                        />
+                    ))}
 
-                {/* Ссылки на формы */}
+                    <button
+                        type="submit"
+                        className="form__btn">
+                        {nameBtn}
+                    </button>
 
-                {
-                    header === "Регистрация" &&
-                    <NavLink to="/" className="link">
-                        Авторизация
-                    </NavLink>
-                }
+                    {/* Ссылки на формы */}
 
-                {
-                    header === "Авторизация" &&
-                    <NavLink to="/register" className="link">
-                        Регистрация
-                    </NavLink>
-                }
+                    {
+                        header === "Регистрация" &&
+                        <NavLink to="/" className="link">
+                            Авторизация
+                        </NavLink>
+                    }
 
-            </div>
-        </form>
+                    {
+                        header === "Авторизация" &&
+                        <NavLink to="/register" className="link">
+                            Регистрация
+                        </NavLink>
+                    }
+
+                </div>
+            </form>
     );
 };
+

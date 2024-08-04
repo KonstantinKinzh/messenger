@@ -2,9 +2,9 @@
 export interface IDynamicFormProps {
     header: string,
     inputs: IInputs[];
-    // Функция обработки данных формы
-    onSubmit: (states: Record<string, any>, navigate: (path: string) => void) => void;
     nameBtn: string;
+    onSubmit: (states: Record<string, any>, navigate: (path: string) => void) => void;
+    
 };
 
 // Интерфейс для описания полей формы

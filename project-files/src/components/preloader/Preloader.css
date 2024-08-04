@@ -6,7 +6,7 @@
     position: relative;
     width: 53px;
     height: 53px;
-    border: 3px solid #293133;
+    border: 3px solid #B5B8B1;
     border-radius: 50%;
     display: inline-block;
     box-sizing: border-box;
@@ -20,8 +20,8 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: 45px;
-    height: 45px;
+    width: calc(100% - 6px);
+    height: calc(100% - 6px);
     border-radius: 50%;
     border: 3px solid transparent;
     border-bottom-color: #FF3D00;

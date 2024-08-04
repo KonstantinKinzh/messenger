@@ -5,6 +5,9 @@ import { observer } from "mobx-react";
 import { FormChat } from "@/components/form";
 import { WindowError } from "@/components/windowError";
 
+// Stores
+import { dataErrRegister } from "@/shared/error/store/dataErrorStore";
+
 // Consts
 import { inputs } from "./consts/inputs";
 
@@ -14,24 +17,19 @@ import { toRegister } from "./utils/toRegister";
 // Styles
 import "./Register.css";
 
-// Stores
-import { dataErrPass } from "@/shared/error/store/dataErrorStore";
 
 export const Register = observer(() => {
-    const isOpenWinErr = dataErrPass.isOpenWInErr;
+    const isOpenWinErr = dataErrRegister.isOpenWInErr;
     return (
         <div className="register">
             <FormChat
                 header="Регистрация"
                 inputs={inputs}
                 onSubmit={toRegister}
-                nameBtn="Зарегистрироваться"
-            />
+                nameBtn="Зарегистрироваться" />
 
             {isOpenWinErr &&
-                <WindowError
-                    instanceStore={dataErrPass}
-                />
+                <WindowError instanceStore={dataErrRegister} />
             }
         </div>
     );
