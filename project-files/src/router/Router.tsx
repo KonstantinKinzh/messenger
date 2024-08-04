@@ -23,7 +23,9 @@ const router = createBrowserRouter([
     {
         path: "/chat",
         element: <Chat />
-    }
+    },
+
+    
 ]);
 
 export function Router() {

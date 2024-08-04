@@ -18,7 +18,7 @@ class UserStore {
         makeAutoObservable(this);
     };
 
-    setToken = (dataActiveUser: IDataActiveUser) => {
+    setDataUser = (dataActiveUser: IDataActiveUser) => {
         this.dataActiveUser = dataActiveUser;
     };
 };

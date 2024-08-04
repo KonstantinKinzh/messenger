@@ -1,5 +1,9 @@
+// Mobx
+import { observer } from "mobx-react";
+
 // Components
 import { FormChat } from "@/components/form";
+import { WindowError } from "@/components/windowError";
 
 // Consts
 import { inputs } from "./consts/inputs";
@@ -10,9 +14,11 @@ import { toRegister } from "./utils/toRegister";
 // Styles
 import "./Register.css";
 
+// Stores
+import { dataErrPass } from "@/shared/error/store/dataErrorStore";
 
-
-export function Register() {
+export const Register = observer(() => {
+    const isOpenWinErr = dataErrPass.isOpenWInErr;
     return (
         <div className="register">
             <FormChat
@@ -21,6 +27,12 @@ export function Register() {
                 onSubmit={toRegister}
                 nameBtn="Зарегистрироваться"
             />
+
+            {isOpenWinErr &&
+                <WindowError
+                    instanceStore={dataErrPass}
+                />
+            }
         </div>
     );
-};
+});

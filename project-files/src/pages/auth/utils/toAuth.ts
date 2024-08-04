@@ -2,17 +2,17 @@
 import { auth } from "@/firebase/modules";
 import { signInWithEmailAndPassword } from "firebase/auth";
 
-// Mobx Store
-import { rootStore } from "@/stores/rootStore";
+// Local Storage
+import { setDataLS } from "@/shared/localStorage/setDataLS";
 
 export const toAuth = async (states: any, navigate: (path: string) => void) => {
     const email = states.emailState;
     const password = states.passwordState;
-    const setStore = rootStore.userStore.setToken;
 
     try {
         const dataRes = await signInWithEmailAndPassword(auth, email, password);
         const user = dataRes.user;
+        console.log(user);
         const token = await user.getIdToken();
 
         const dataActiveUser = {
@@ -23,8 +23,7 @@ export const toAuth = async (states: any, navigate: (path: string) => void) => {
             token: token,
         };
 
-        setStore(dataActiveUser);
-        localStorage.setItem('dataUserActive', JSON.stringify(dataActiveUser));
+        setDataLS("dataActiveUser", dataActiveUser);
 
         navigate("/chat");
     } catch (error) {

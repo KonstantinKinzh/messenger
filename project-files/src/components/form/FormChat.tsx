@@ -10,8 +10,6 @@ import { useInputChange } from './hooks/useInputChange';
 // Styles
 import "./FormChat.css";
 
-
-
 export const FormChat = (props: IDynamicFormProps) => {
     const { header, inputs, nameBtn, onSubmit } = props;
     const { states, getInputValue, defineState } = useInputChange();
