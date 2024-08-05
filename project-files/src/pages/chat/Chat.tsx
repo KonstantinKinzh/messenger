@@ -10,10 +10,7 @@ import { InputMessage } from "./ui/inputMessage";
 // Styles
 import "./Chat.css";
 
-
-
 export const Chat = observer(() => {
-
     return (
         <div className="chat">
             <Header />

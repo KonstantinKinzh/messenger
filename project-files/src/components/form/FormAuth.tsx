@@ -8,9 +8,9 @@ import { IDynamicFormProps } from './interfaces/interfaces';
 import { useInputChange } from './hooks/useInputChange';
 
 // Styles
-import "./FormChat.css";
+import "./FormAuth.css";
 
-export const FormChat = (props: IDynamicFormProps) => {
+export const FormAuth = (props: IDynamicFormProps) => {
     const { header, inputs, nameBtn, onSubmit } = props;
     const { states, getInputValue, defineState } = useInputChange();
     const navigate = useNavigate();

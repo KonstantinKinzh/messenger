@@ -1,4 +1,15 @@
 .left-panel {
+
     background-color: #262c34;
-    background-size: 500% 500%;
+    /* background-size: 500% 500%; */
+}
+
+.settings-search {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-left: 5px;
+    padding-top: 10px;
+    padding-right: 5px;
 }

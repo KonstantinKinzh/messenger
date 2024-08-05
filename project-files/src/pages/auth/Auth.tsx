@@ -1,5 +1,5 @@
 // React
-import { FormChat } from "@/components/form";
+import { FormAuth } from "@/components/form";
 
 import { observer } from "mobx-react";
 
@@ -22,7 +22,7 @@ export const Auth = observer(() => {
     const isOpen = dataErrAuth.isOpenWInErr;
     return (
         <div className="auth">
-            <FormChat
+            <FormAuth
                 header="Авторизация"
                 inputs={inputs}
                 onSubmit={toAuth}

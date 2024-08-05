@@ -1,1 +1,1 @@
-export { FormChat } from "./FormChat";
+export { FormAuth } from "./FormAuth";

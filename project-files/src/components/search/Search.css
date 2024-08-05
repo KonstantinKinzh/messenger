@@ -1,0 +1,29 @@
+.search {
+    border-radius: 30px;
+    background-color: #ffffff;
+}
+
+.search-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 7px;
+    padding-top: 4px;
+    padding-right: 7px;
+    padding-bottom: 4px;
+    border-radius: 30px;
+}
+
+.search-inner input {
+    font-weight: 500;
+    font-size: 14px;
+    padding-left: 5px;
+    
+}
+
+.search__input {
+    /* width: 100%; */
+    border: none;
+    outline: none;
+    border-radius: 30px;
+}

@@ -2,7 +2,7 @@
 import { observer } from "mobx-react";
 
 // Components
-import { FormChat } from "@/components/form";
+import { FormAuth } from "@/components/form";
 import { WindowError } from "@/components/windowError";
 
 // Stores
@@ -22,7 +22,7 @@ export const Register = observer(() => {
     const isOpenWinErr = dataErrRegister.isOpenWInErr;
     return (
         <div className="register">
-            <FormChat
+            <FormAuth
                 header="Регистрация"
                 inputs={inputs}
                 onSubmit={toRegister}

@@ -1,15 +1,15 @@
 // Types
 type TCount = {
-    count?: number;
     width: number;
     height: number;
+    count?: number;
 };
 
 // Styles
 import "./Preloader.css";
 
 export function Preloader(props: TCount) {
-    const { count, width, height } = props;
+    const {  width, height, count, } = props;
 
     return (
         <div className="prelouder-wrapper">
